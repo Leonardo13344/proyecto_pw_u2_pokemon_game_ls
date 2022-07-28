@@ -2,16 +2,21 @@
   <!--TODO OPtions-->
   <div class="options-container">
     <ul>
-      <li>growlithe</li>
-      <li>swarmpet</li>
-      <li>3</li>
-      <li>4</li>
+      <li v-for="pokemon in pokemons" :key="pokemon.id">{{pokemon.nombre}}</li>
+      
     </ul>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props:{
+    pokemons:{
+      type:Array,
+      required:true
+    }
+  }
+};
 </script>
 
 <style>
